@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: #F8F4EE;
+    color: #1A1917;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+@layer components {
+  .section-pad {
+    @apply px-6 py-24 md:px-12 lg:px-20 xl:px-32;
+  }
+
+  .eyebrow {
+    @apply font-body text-xs font-medium tracking-widest2 uppercase text-forest;
+  }
+
+  .strikethrough-line {
+    position: relative;
+    display: inline-block;
+  }
+
+  .strikethrough-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 3px;
+    background-color: #2C5F4A;
+    transform: translateY(-50%) rotate(-1.5deg);
+  }
+
+  .crosswalk-stripes {
+    background-image: repeating-linear-gradient(
+      90deg,
+      #2C5F4A 0px,
+      #2C5F4A 28px,
+      transparent 28px,
+      transparent 44px
+    );
+  }
+
+  /* Hospital ward tile pattern */
+  .ward-pattern {
+    background-image:
+      linear-gradient(rgba(74, 127, 171, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 127, 171, 0.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Zone label pill */
+  .zone-label {
+    @apply inline-flex items-center gap-2 font-body text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-sm border;
+  }
+
+  /* Thick crosswalk divider between sections */
+  .section-crosswalk {
+    height: 16px;
+    background-image: repeating-linear-gradient(
+      90deg,
+      #1A1917 0px,
+      #1A1917 36px,
+      #F8F4EE 36px,
+      #F8F4EE 52px
+    );
+  }
+
+  /* World warm gradient */
+  .world-bg {
+    background: linear-gradient(160deg, #FDF3E3 0%, #F8F4EE 60%, #E8F3FB 100%);
+  }
+}
