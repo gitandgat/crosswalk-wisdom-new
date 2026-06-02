@@ -28,6 +28,9 @@ import ImgPlaybookPage from "./pages/ImgPlaybookPage";
 import ImgAdvisorPage from "./pages/ImgAdvisorPage";
 import ImgCalculatorPage from "./pages/ImgCalculatorPage";
 import ImgPivotChallengePage from "./pages/ImgPivotChallengePage";
+import PhilosophyPage from "./pages/PhilosophyPage";
+import TrackerPage from "./pages/TrackerPage";
+import FearAuditWrapper from "./pages/FearAuditWrapper";
 
 function HomePage() {
   return (
@@ -60,6 +63,7 @@ export default function App() {
         <Route path="/course" element={<CoursePage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/philosophy" element={<PhilosophyPage />} />
         <Route path="/work-with-me" element={<WorkWithMePage />} />
         <Route path="/assessment" element={<AssessmentPage />} />
         <Route path="/img" element={<ImgHubPage />} />
@@ -70,6 +74,8 @@ export default function App() {
         <Route path="/img/advisor" element={<ImgAdvisorPage />} />
         <Route path="/img/calculator" element={<ImgCalculatorPage />} />
         <Route path="/imgpivot" element={<ImgPivotChallengePage />} />
+        <Route path="/tracker" element={<TrackerPage />} />
+        <Route path="/fear-audit/*" element={<FearAuditWrapper />} />
       </Routes>
     </BrowserRouter>
   );
