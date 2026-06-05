@@ -30,7 +30,7 @@ import ImgCalculatorPage from "./pages/ImgCalculatorPage";
 import ImgPivotChallengePage from "./pages/ImgPivotChallengePage";
 import PhilosophyPage from "./pages/PhilosophyPage";
 import TrackerPage from "./pages/TrackerPage";
-import FearAuditWrapper from "./pages/FearAuditWrapper";
+// import FearAuditWrapper from "./pages/FearAuditWrapper";
 
 function HomePage() {
   return (
@@ -75,7 +75,7 @@ export default function App() {
         <Route path="/img/calculator" element={<ImgCalculatorPage />} />
         <Route path="/imgpivot" element={<ImgPivotChallengePage />} />
         <Route path="/tracker" element={<TrackerPage />} />
-        <Route path="/fear-audit/*" element={<FearAuditWrapper />} />
+        {/* <Route path="/fear-audit/*" element={<FearAuditWrapper />} /> */}
       </Routes>
     </BrowserRouter>
   );
