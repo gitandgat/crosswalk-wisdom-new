@@ -24,6 +24,7 @@ export function SunkCostTracker() {
   const [moneyIndex, setMoneyIndex] = useState(-1);
   const [relationships, setRelationships] = useState(0);
   const [identity, setIdentity] = useState(1);
+  const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -49,6 +50,10 @@ export function SunkCostTracker() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!firstName.trim()) {
+      alert('Please enter your first name');
+      return;
+    }
     if (!email || !email.includes('@') || !email.includes('.')) return;
 
     setSubmitting(true);
@@ -59,6 +64,7 @@ export function SunkCostTracker() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          firstName,
           email,
           score,
           years_trapped: years,
@@ -70,6 +76,7 @@ export function SunkCostTracker() {
 
       if (response.ok) {
         setSubmitted(true);
+        setFirstName('');
         setEmail('');
       } else {
         const error = await response.json();
@@ -224,23 +231,33 @@ export function SunkCostTracker() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-md mx-auto">
                 <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="your@email.com"
+                  type="text"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  placeholder="Your first name"
                   required
-                  className="flex-1 px-5 py-3.5 rounded-xl border border-amber-light/50 bg-white text-charcoal font-sans placeholder:text-charcoal-light/50 focus:outline-none focus:ring-2 focus:ring-amber-warm/40 transition-all"
+                  className="w-full px-5 py-3.5 rounded-xl border border-amber-light/50 bg-white text-charcoal font-sans placeholder:text-charcoal-light/50 focus:outline-none focus:ring-2 focus:ring-amber-warm/40 transition-all"
                 />
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-charcoal text-cream font-sans font-medium rounded-xl hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  {submitting ? 'Sending...' : 'Send me my results'}
-                  {!submitting && <ArrowRight className="w-4 h-4" />}
-                </button>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="your@email.com"
+                    required
+                    className="flex-1 px-5 py-3.5 rounded-xl border border-amber-light/50 bg-white text-charcoal font-sans placeholder:text-charcoal-light/50 focus:outline-none focus:ring-2 focus:ring-amber-warm/40 transition-all"
+                  />
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-charcoal text-cream font-sans font-medium rounded-xl hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {submitting ? 'Sending...' : 'Send me my results'}
+                    {!submitting && <ArrowRight className="w-4 h-4" />}
+                  </button>
+                </div>
               </form>
             )}
           </div>
