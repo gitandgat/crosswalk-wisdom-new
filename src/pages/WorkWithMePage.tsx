@@ -4,6 +4,8 @@ import { ArrowRight, Check } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+const CROSSING_SESSION_URL = "https://sahawat.gumroad.com/l/crossing-session";
+
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
@@ -19,7 +21,22 @@ const icp = [
   "You're not looking for a pep talk. You need someone who actually did it, and a plan that doesn't require blowing up your life",
 ];
 
-const products = [
+type Product = {
+  step: string;
+  label: string;
+  price: string;
+  name: string;
+  tagline: string;
+  forYouIf: string;
+  bullets: string[];
+  cta: string;
+  href: string;
+  external: boolean;
+  highlight: boolean;
+  badge?: string;
+};
+
+const products: Product[] = [
   {
     step: "01",
     label: "Start here",
@@ -58,6 +75,25 @@ const products = [
   },
   {
     step: "03",
+    label: "Work with me 1:1",
+    price: "$97",
+    name: "The Crossing Session",
+    tagline: "One hour, one-on-one, on your actual situation.",
+    forYouIf:
+      "You've named the fear and you're done reading about it. You want a plan built around your numbers, your license, your life — not more theory.",
+    bullets: [
+      "One hour, one-on-one — we separate the real risks from the inherited ones and put a price on staying",
+      "A one-page Crossing Plan in writing within 48 hours: your constraint and your next three moves",
+      "Founding rate, 10 spots. Full refund if you leave with no more clarity than you walked in with",
+    ],
+    cta: "Book a session",
+    href: CROSSING_SESSION_URL,
+    external: true,
+    highlight: true,
+    badge: "Founding rate — 10 spots",
+  },
+  {
+    step: "04",
     label: "The program",
     price: "$297",
     name: "The Crosswalk Method",
@@ -72,10 +108,10 @@ const products = [
     cta: "See the course",
     href: "/course",
     external: false,
-    highlight: true,
+    highlight: false,
   },
   {
-    step: "04",
+    step: "05",
     label: "All-in",
     price: "$1,500–3,000",
     name: "The Crosswalk Program",
@@ -131,6 +167,24 @@ export default function WorkWithMePage() {
               hospital. Now I help healthcare professionals do what I did —
               without doing it alone.
             </motion.p>
+
+            <motion.div
+              {...fadeUp(0.3)}
+              className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4"
+            >
+              <a
+                href={CROSSING_SESSION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-body text-sm font-medium px-7 py-3.5 rounded-sm bg-forest text-parchment hover:bg-forest-light transition-colors duration-200 whitespace-nowrap self-start"
+              >
+                Book a Crossing Session — $97
+                <ArrowRight size={14} />
+              </a>
+              <span className="font-body text-sm text-muted">
+                One hour, one plan in writing. Founding rate — 10 spots.
+              </span>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -331,7 +385,7 @@ export default function WorkWithMePage() {
                 {p.highlight && (
                   <div className="px-10 pb-6">
                     <span className="font-body text-xs font-medium tracking-widest uppercase bg-parchment/10 text-parchment/50 px-3 py-1 rounded-sm">
-                      Most popular
+                      {p.badge || "Most popular"}
                     </span>
                   </div>
                 )}
