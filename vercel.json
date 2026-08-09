@@ -1,5 +1,13 @@
 {
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "glute.crosswalkwisdom.com" }],
+      "destination": "https://www.crosswalkwisdom.com/glute",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/pivot-map", "destination": "/pivot-map.html" },

@@ -30,6 +30,15 @@ import ImgCalculatorPage from "./pages/ImgCalculatorPage";
 import ImgPivotChallengePage from "./pages/ImgPivotChallengePage";
 import PhilosophyPage from "./pages/PhilosophyPage";
 import TrackerPage from "./pages/TrackerPage";
+import GluteLandingPage from "./pages/GluteLandingPage";
+import GluteProgramPage from "./pages/GluteProgramPage";
+import GluteAppLogin from "./pages/GluteAppLogin";
+import GluteAppHome from "./pages/GluteAppHome";
+import GluteTrainerClients from "./pages/GluteTrainerClients";
+import GluteClientProgram from "./pages/GluteClientProgram";
+import GluteClientProgress from "./pages/GluteClientProgress";
+import { AuthProvider } from "./auth/AuthProvider";
+import { RequireAuth } from "./auth/RequireAuth";
 // import FearAuditWrapper from "./pages/FearAuditWrapper";
 
 function HomePage() {
@@ -52,6 +61,7 @@ function HomePage() {
 export default function App() {
   return (
     <BrowserRouter>
+      <AuthProvider>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/start" element={<StartPage />} />
@@ -75,8 +85,16 @@ export default function App() {
         <Route path="/img/calculator" element={<ImgCalculatorPage />} />
         <Route path="/imgpivot" element={<ImgPivotChallengePage />} />
         <Route path="/tracker" element={<TrackerPage />} />
+        <Route path="/glute" element={<GluteLandingPage />} />
+        <Route path="/glute/program" element={<GluteProgramPage />} />
+        <Route path="/glute/app/login" element={<GluteAppLogin />} />
+        <Route path="/glute/app" element={<RequireAuth><GluteAppHome /></RequireAuth>} />
+        <Route path="/glute/app/program" element={<RequireAuth><GluteClientProgram /></RequireAuth>} />
+        <Route path="/glute/app/clients" element={<RequireAuth role="trainer"><GluteTrainerClients /></RequireAuth>} />
+        <Route path="/glute/app/clients/:clientId" element={<RequireAuth role="trainer"><GluteClientProgress /></RequireAuth>} />
         {/* <Route path="/fear-audit/*" element={<FearAuditWrapper />} /> */}
       </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 }
