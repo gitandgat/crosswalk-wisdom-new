@@ -43,13 +43,13 @@ export default function AssessmentQuiz({ onComplete, savedAnswers = [], savedQue
   };
 
   return (
-    <div className="min-h-screen bg-brand-white flex flex-col">
-      <div className="w-full bg-brand-charcoal/5 h-2">
+    <div className="min-h-screen bg-parchment flex flex-col">
+      <div className="w-full bg-charcoal/5 h-2">
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.3 }}
-          className="h-full bg-gradient-to-r from-brand-amber via-brand-orange to-brand-teal"
+          className="h-full bg-gradient-to-r from-amber via-terracotta to-sage"
         />
       </div>
 
@@ -59,7 +59,7 @@ export default function AssessmentQuiz({ onComplete, savedAnswers = [], savedQue
             <button
               onClick={handleBack}
               disabled={currentQuestionIndex === 0}
-              className={`flex items-center gap-2 text-brand-charcoal/60 hover:text-brand-charcoal transition-colors ${
+              className={`flex items-center gap-2 text-charcoal/60 hover:text-charcoal transition-colors ${
                 currentQuestionIndex === 0 ? 'opacity-30 cursor-not-allowed' : ''
               }`}
             >
@@ -67,7 +67,7 @@ export default function AssessmentQuiz({ onComplete, savedAnswers = [], savedQue
               <span className="text-sm font-medium">Back</span>
             </button>
 
-            <span className="text-sm text-brand-charcoal/60 font-medium">
+            <span className="text-sm text-charcoal/60 font-medium">
               Question {currentQuestionIndex + 1} of {questions.length}
             </span>
           </div>
@@ -80,7 +80,7 @@ export default function AssessmentQuiz({ onComplete, savedAnswers = [], savedQue
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-charcoal mb-12 leading-tight">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-charcoal mb-12 leading-tight">
                 {currentQuestion.question}
               </h2>
 
@@ -96,11 +96,11 @@ export default function AssessmentQuiz({ onComplete, savedAnswers = [], savedQue
                     whileTap={{ scale: 0.98 }}
                     className={`w-full text-left p-6 rounded-2xl border-2 transition-all duration-300 ${
                       selectedAnswer === index
-                        ? 'border-brand-amber bg-brand-amber/10 shadow-lg'
-                        : 'border-brand-charcoal/10 bg-white hover:border-brand-amber/50 hover:shadow-md'
+                        ? 'border-amber bg-amber/10 shadow-lg'
+                        : 'border-charcoal/10 bg-white hover:border-amber/50 hover:shadow-md'
                     }`}
                   >
-                    <p className="text-lg text-brand-charcoal leading-relaxed">
+                    <p className="text-lg text-charcoal leading-relaxed">
                       {answer.text}
                     </p>
                   </motion.button>

@@ -6,7 +6,7 @@ interface AssessmentLandingProps {
 
 export default function AssessmentLanding({ onStart }: AssessmentLandingProps) {
   return (
-    <div className="min-h-screen bg-brand-white flex flex-col items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-parchment flex flex-col items-center justify-center px-4 py-12">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -17,9 +17,9 @@ export default function AssessmentLanding({ onStart }: AssessmentLandingProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="mb-6 inline-block px-4 py-2 bg-brand-teal/10 border border-brand-teal/30 rounded-full"
+          className="mb-6 inline-block px-4 py-2 bg-sage/10 border border-sage/30 rounded-full"
         >
-          <p className="text-brand-teal font-medium text-sm">
+          <p className="text-sage font-medium text-sm">
             For nurses, doctors, caregivers &amp; healthcare professionals
           </p>
         </motion.div>
@@ -28,7 +28,7 @@ export default function AssessmentLanding({ onStart }: AssessmentLandingProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="font-display text-4xl md:text-6xl font-bold text-brand-charcoal mb-6 leading-tight"
+          className="font-display text-4xl md:text-6xl font-bold text-charcoal mb-6 leading-tight"
         >
           The Burnout Crosswalk Assessment
         </motion.h1>
@@ -37,7 +37,7 @@ export default function AssessmentLanding({ onStart }: AssessmentLandingProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.6 }}
-          className="font-display text-2xl md:text-3xl text-brand-amber mb-8"
+          className="font-display text-2xl md:text-3xl text-amber mb-8"
         >
           Discover where you are on your healing journey
         </motion.h2>
@@ -46,7 +46,7 @@ export default function AssessmentLanding({ onStart }: AssessmentLandingProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.6 }}
-          className="text-lg text-brand-charcoal/80 leading-relaxed mb-12 max-w-xl mx-auto"
+          className="text-lg text-charcoal/80 leading-relaxed mb-12 max-w-xl mx-auto"
         >
           This 2-minute assessment maps your burnout to the 4 stages of the Crosswalk Method — Start, Stop, Elder, and Human. Your results are personalized and private.
         </motion.p>
@@ -59,7 +59,7 @@ export default function AssessmentLanding({ onStart }: AssessmentLandingProps) {
           whileTap={{ scale: 0.95 }}
           onClick={onStart}
           data-event="quiz_start"
-          className="bg-brand-amber text-brand-charcoal font-semibold px-10 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-brand-orange"
+          className="bg-amber text-charcoal font-semibold px-10 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-terracotta"
         >
           Begin Your Assessment
         </motion.button>
@@ -68,7 +68,7 @@ export default function AssessmentLanding({ onStart }: AssessmentLandingProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.3, duration: 0.6 }}
-          className="mt-16 text-brand-charcoal/60 text-sm"
+          className="mt-16 text-charcoal/60 text-sm"
         >
           <p className="mb-2 font-display italic">
             "The sidewalk is the classroom. You are the student. Healing is the lesson."
@@ -77,7 +77,7 @@ export default function AssessmentLanding({ onStart }: AssessmentLandingProps) {
             By{' '}
             <a
               href="https://www.crosswalkwisdom.com"
-              className="text-brand-amber hover:text-brand-orange transition-colors underline"
+              className="text-amber hover:text-terracotta transition-colors underline"
             >
               Crosswalk Wisdom
             </a>
