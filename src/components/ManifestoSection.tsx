@@ -14,10 +14,14 @@ const lines = [
 
 export default function ManifestoSection() {
   return (
-    <section className="section-pad bg-ink text-parchment overflow-hidden relative">
+    <section id="manifesto" className="section-pad bg-ink text-parchment overflow-hidden relative">
       {/* Crosswalk stripes — decorative */}
       <div className="absolute top-0 left-0 right-0 h-2 crosswalk-stripes opacity-30" />
       <div className="absolute bottom-0 left-0 right-0 h-2 crosswalk-stripes opacity-30" />
+      <div className="hidden md:flex absolute top-10 right-8 lg:right-16 items-center gap-3">
+        <span className="chapter-label text-cobalt-accent/80">The Manifesto</span>
+        <span className="text-cobalt-accent blueprint-crosshair" />
+      </div>
 
       <div className="max-w-site mx-auto">
         <div className="max-w-3xl mx-auto text-center">

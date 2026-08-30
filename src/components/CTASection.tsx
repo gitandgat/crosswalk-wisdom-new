@@ -3,10 +3,9 @@ import { motion } from "framer-motion";
 export default function CTASection() {
   return (
     <section id="contact" className="section-pad world-bg relative">
-      {/* World zone label */}
+      {/* World chapter label */}
       <div className="absolute top-8 left-6 md:left-12">
-        <span className="zone-label border-amber/30 text-amber">
-          <span className="w-1.5 h-1.5 rounded-full bg-amber" />
+        <span className="chapter-label text-amber">
           The World
         </span>
       </div>
@@ -57,13 +56,13 @@ export default function CTASection() {
           >
             <a
               href="/img"
-              className="inline-flex items-center justify-center px-8 py-4 bg-forest text-parchment font-body font-medium text-base rounded-sm hover:bg-forest-mid transition-colors duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 bg-ink text-parchment font-body font-medium text-base rounded-full hover:bg-charcoal transition-colors duration-200"
             >
               Get the free calculator →
             </a>
             <a
               href="/img"
-              className="inline-flex items-center justify-center px-8 py-4 border border-forest/30 text-forest font-body font-medium text-base rounded-sm hover:bg-forest hover:text-parchment transition-colors duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 border border-ink/20 text-ink font-body font-medium text-base rounded-full hover:bg-ink hover:text-parchment transition-colors duration-200"
             >
               See the full pivot guide →
             </a>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ScrollStat from "./ScrollStat";
 
 const fadeUp = {
   initial: { opacity: 0, y: 32 },
@@ -24,15 +25,15 @@ const myths = [
 
 export default function IdentityCageSection() {
   return (
-    <section className="section-pad bg-parchment relative">
+    <section id="cage" className="section-pad bg-parchment relative">
       <div className="absolute top-0 left-0 right-0 section-crosswalk" />
+      <div className="hidden md:block absolute top-10 right-8 lg:right-16 text-cobalt-accent blueprint-crosshair" />
       <div className="max-w-site mx-auto">
 
         {/* Header */}
         <div className="max-w-2xl mx-auto text-center mb-20">
           <motion.div {...fadeUp} className="mb-4">
-            <span className="zone-label border-amber/30 text-amber bg-amber-light">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber" />
+            <span className="chapter-label text-amber">
               The Crosswalk
             </span>
           </motion.div>
@@ -53,8 +54,25 @@ export default function IdentityCageSection() {
             transition={{ ...fadeUp.transition, delay: 0.2 }}
             className="font-body text-base md:text-lg text-charcoal leading-relaxed"
           >
-            &ldquo;I am a doctor&rdquo; isn&rsquo;t a description — it&rsquo;s a load-bearing wall. The system built that wall, and it profits from you staying inside it. Dismantling it feels like dying. It&rsquo;s also the beginning of something better.
+            &ldquo;I am a doctor&rdquo; isn&rsquo;t a description — it&rsquo;s a load-bearing wall. The system built it. It profits from you staying inside. Dismantling it feels like dying. It&rsquo;s also the beginning of something better.
           </motion.p>
+        </div>
+
+        {/* Stat strip: IMG match rate vs Canadian grad match rate */}
+        <div className="grid grid-cols-2 max-w-md mx-auto mb-20 divide-x divide-border">
+          <div className="text-center px-6">
+            <div className="font-display text-5xl md:text-6xl lg:text-7xl leading-none text-forest">
+              10–22%
+            </div>
+            <div className="chapter-label mt-3 opacity-60">IMG match rate</div>
+          </div>
+          <ScrollStat
+            value={97}
+            suffix="%"
+            label="Canadian grad match rate"
+            className="text-center px-6"
+            accentClassName="text-ink"
+          />
         </div>
 
         {/* Myth vs Truth cards */}
@@ -103,7 +121,7 @@ export default function IdentityCageSection() {
           </p>
           <a
             href="/img"
-            className="inline-flex items-center gap-2 font-body text-sm font-medium text-forest border border-forest px-6 py-3 rounded-sm hover:bg-forest hover:text-parchment transition-colors duration-200"
+            className="inline-flex items-center gap-2 font-body text-sm font-medium bg-ink text-parchment px-6 py-3 rounded-full hover:bg-charcoal transition-colors duration-200"
           >
             Run the numbers. Get the free calculator →
           </a>

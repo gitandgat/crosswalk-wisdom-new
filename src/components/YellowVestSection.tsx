@@ -9,7 +9,11 @@ const fadeUp = {
 
 export default function YellowVestSection() {
   return (
-    <section className="section-pad bg-charcoal text-parchment">
+    <section id="vest" className="section-pad bg-charcoal text-parchment relative">
+      <div className="hidden md:flex absolute top-10 right-8 lg:right-16 items-center gap-3">
+        <span className="chapter-label text-cobalt-accent/80">The Vest</span>
+        <span className="text-cobalt-accent blueprint-crosshair" />
+      </div>
       <div className="max-w-site mx-auto">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
 
