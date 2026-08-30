@@ -15,6 +15,7 @@
     { "source": "/train-like-a-clinician", "destination": "/train-like-a-clinician.html" },
     { "source": "/marginal-decade", "destination": "/marginal-decade.html" },
     { "source": "/clinic-to-coaching", "destination": "/clinic-to-coaching.html" },
+    { "source": "/crosswalk-assessment", "destination": "/crosswalk-assessment.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
