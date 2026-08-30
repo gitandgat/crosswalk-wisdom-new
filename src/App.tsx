@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import BlueprintRail from "./components/BlueprintRail";
+import SectionReveal from "./components/SectionReveal";
 import HeroSection from "./components/HeroSection";
 import MirrorSection from "./components/MirrorSection";
 import IdentityCageSection from "./components/IdentityCageSection";
@@ -45,14 +47,15 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-parchment">
       <Navbar />
+      <BlueprintRail />
       <HeroSection />
-      <MirrorSection />
-      <IdentityCageSection />
-      <YellowVestSection />
-      <BeliefsSection />
-      <ProductSection />
-      <ManifestoSection />
-      <CTASection />
+      <SectionReveal><MirrorSection /></SectionReveal>
+      <SectionReveal><IdentityCageSection /></SectionReveal>
+      <SectionReveal><YellowVestSection /></SectionReveal>
+      <SectionReveal><BeliefsSection /></SectionReveal>
+      <SectionReveal><ProductSection /></SectionReveal>
+      <SectionReveal><ManifestoSection /></SectionReveal>
+      <SectionReveal><CTASection /></SectionReveal>
       <Footer />
     </div>
   );

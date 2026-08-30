@@ -76,7 +76,11 @@ const products = [
 
 export default function ProductSection() {
   return (
-    <section id="products" className="section-pad world-bg">
+    <section id="products" className="section-pad world-bg relative">
+      <div className="hidden md:flex absolute top-10 right-8 lg:right-16 items-center gap-3">
+        <span className="chapter-label text-cobalt-accent/80">The Tools</span>
+        <span className="text-cobalt-accent blueprint-crosshair" />
+      </div>
       <div className="max-w-site mx-auto">
 
         {/* Header */}
@@ -130,7 +134,7 @@ export default function ProductSection() {
               }`}
             >
               {p.highlight && (
-                <span className="absolute top-4 right-4 font-body text-xs font-medium tracking-widest uppercase bg-parchment text-forest px-3 py-1 rounded-sm">
+                <span className="absolute top-4 right-4 font-body text-xs font-medium tracking-widest uppercase bg-parchment text-forest px-3 py-1 rounded-full">
                   Most popular
                 </span>
               )}
@@ -167,11 +171,7 @@ export default function ProductSection() {
               <div className="flex-shrink-0">
                 <a
                   href={p.href}
-                  className={`inline-flex items-center gap-2 font-body text-sm font-medium px-6 py-3 rounded-sm transition-colors duration-200 whitespace-nowrap ${
-                    p.highlight
-                      ? "bg-parchment text-forest hover:bg-forest-light"
-                      : "border border-forest text-forest hover:bg-forest hover:text-parchment"
-                  }`}
+                  className="inline-flex items-center gap-2 font-body text-sm font-medium px-6 py-3 rounded-full bg-ink text-parchment hover:bg-charcoal transition-colors duration-200 whitespace-nowrap"
                 >
                   {p.cta}
                   <ArrowRight size={14} />

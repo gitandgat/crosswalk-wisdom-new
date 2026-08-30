@@ -40,7 +40,11 @@ const beliefs = [
 
 export default function BeliefsSection() {
   return (
-    <section id="beliefs" className="section-pad bg-parchment">
+    <section id="beliefs" className="section-pad bg-parchment relative">
+      <div className="hidden md:flex absolute top-10 right-8 lg:right-16 items-center gap-3">
+        <span className="chapter-label text-cobalt-accent/80">The Beliefs</span>
+        <span className="text-cobalt-accent blueprint-crosshair" />
+      </div>
       <div className="max-w-site mx-auto">
 
         {/* Header */}
@@ -111,7 +115,7 @@ export default function BeliefsSection() {
             </div>
             <a
               href="/img"
-              className="mt-8 inline-flex items-center gap-2 font-body text-sm font-medium bg-parchment text-forest px-5 py-3 rounded-sm hover:bg-forest-light transition-colors duration-200 self-start"
+              className="mt-8 inline-flex items-center gap-2 font-body text-sm font-medium bg-ink text-parchment px-5 py-3 rounded-full hover:bg-charcoal transition-colors duration-200 self-start"
             >
               Get the free calculator →
             </a>
