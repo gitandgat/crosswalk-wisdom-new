@@ -10,6 +10,7 @@ const ALLOWED_TAGS = new Set([
   'lead-magnet-train-like-a-clinician',
   'lead-magnet-marginal-decade',
   'lead-magnet-clinic-to-coaching',
+  'lead-magnet-crosswalk-assessment',
 ]);
 
 async function enchargeRequest(path: string, method: string, body: object) {
