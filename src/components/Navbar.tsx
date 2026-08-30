@@ -40,7 +40,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden xl:flex items-center gap-6">
           {links.map((l) => (
             <a
               key={l.label}
@@ -60,7 +60,7 @@ export default function Navbar() {
 
         {/* Mobile menu button */}
         <button
-          className="lg:hidden p-2 text-ink"
+          className="xl:hidden p-2 text-muted hover:text-ink transition-colors duration-200"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -76,7 +76,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden bg-parchment border-b border-border px-6 pb-6 pt-2 space-y-4"
+            className="xl:hidden bg-parchment border-b border-border px-6 pb-6 pt-2 space-y-4"
           >
             {links.map((l) => (
               <a
