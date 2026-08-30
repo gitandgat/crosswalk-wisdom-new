@@ -4,6 +4,9 @@ import { Menu, X } from "lucide-react";
 
 const links = [
   { label: "IMG Pivot Guide", href: "/img" },
+  { label: "Course", href: "/course" },
+  { label: "Philosophy", href: "/philosophy" },
+  { label: "Assessment", href: "/assessment" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "#about" },
   { label: "Work With Me", href: "/work-with-me" },
@@ -37,7 +40,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-6">
           {links.map((l) => (
             <a
               key={l.label}
@@ -49,8 +52,7 @@ export default function Navbar() {
           ))}
           <a
             href="/img/calculator"
-            className="font-body text-sm font-medium px-5 py-2.5 rounded-sm transition-colors duration-200"
-            style={{ backgroundColor: "#F59E0B", color: "#1E1C1A" }}
+            className="font-body text-sm font-medium px-5 py-2.5 rounded-full bg-ink text-parchment hover:bg-charcoal transition-colors duration-200"
           >
             Free Calculator →
           </a>
@@ -58,7 +60,7 @@ export default function Navbar() {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden p-2 text-ink"
+          className="lg:hidden p-2 text-ink"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -74,7 +76,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-parchment border-b border-border px-6 pb-6 pt-2 space-y-4"
+            className="lg:hidden bg-parchment border-b border-border px-6 pb-6 pt-2 space-y-4"
           >
             {links.map((l) => (
               <a
@@ -88,8 +90,7 @@ export default function Navbar() {
             ))}
             <a
               href="/img/calculator"
-              className="block font-body text-sm font-medium px-5 py-3 rounded-sm text-center"
-              style={{ backgroundColor: "#F59E0B", color: "#1E1C1A" }}
+              className="block font-body text-sm font-medium px-5 py-3 rounded-full bg-ink text-parchment text-center"
             >
               Free Calculator →
             </a>

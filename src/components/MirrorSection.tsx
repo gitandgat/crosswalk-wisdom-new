@@ -17,13 +17,12 @@ const searches = [
 
 export default function MirrorSection() {
   return (
-    <section id="about" className="section-pad ward-pattern" style={{ backgroundColor: "#EDF1F7" }}>
+    <section id="about" className="section-pad ward-pattern bg-ward">
       <div className="max-w-site mx-auto">
         <div className="max-w-prose2 mx-auto">
 
           <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0 }} className="mb-6">
-            <span className="zone-label" style={{ borderColor: "#F59E0B22", color: "#F59E0B", backgroundColor: "transparent" }}>
-              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#F59E0B" }} />
+            <span className="chapter-label text-amber">
               Still on the Pathway
             </span>
           </motion.div>

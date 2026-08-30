@@ -3,6 +3,31 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-parchment: 248 244 238;
+    --color-ink: 26 25 23;
+    --color-forest: 44 95 74;
+    --color-forest-light: 228 237 232;
+    --color-forest-mid: 74 138 110;
+    --color-muted: 122 117 112;
+    --color-border: 229 221 208;
+    --color-card: 242 237 229;
+    --color-card-dark: 30 28 26;
+    --color-charcoal: 46 43 40;
+    --color-ward: 237 241 247;
+    --color-ward-dark: 216 226 237;
+    --color-ward-blue: 74 127 171;
+    --color-ward-text: 44 62 80;
+    --color-amber: 212 168 67;
+    --color-amber-light: 255 248 232;
+    --color-sky: 232 243 251;
+    --color-warm: 253 243 227;
+    --color-gold: 201 145 42;
+    /* Pear.no-inspired bold direction: deep cobalt sibling of ward-blue */
+    --color-cobalt: 19 41 75;
+    --color-cobalt-accent: 91 143 214;
+  }
+
   *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -13,8 +38,8 @@
 
   body {
     margin: 0;
-    background-color: #F8F4EE;
-    color: #1A1917;
+    background-color: rgb(var(--color-parchment));
+    color: rgb(var(--color-ink));
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -98,5 +123,59 @@
   /* World warm gradient */
   .world-bg {
     background: linear-gradient(160deg, #FDF3E3 0%, #F8F4EE 60%, #E8F3FB 100%);
+  }
+
+  /* Blueprint bracketed section label, e.g. [ THE WARD ] */
+  .chapter-label {
+    @apply font-body text-[11px] font-medium tracking-widest2 uppercase;
+  }
+
+  .chapter-label::before {
+    content: '[ ';
+    opacity: 0.5;
+  }
+
+  .chapter-label::after {
+    content: ' ]';
+    opacity: 0.5;
+  }
+
+  /* Blueprint grid -- cobalt-tinted counterpart to .ward-pattern, for dark sections */
+  .blueprint-grid {
+    background-image:
+      linear-gradient(rgba(91, 143, 214, 0.14) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(91, 143, 214, 0.14) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Small crosshair mark, used by BlueprintRail and section corners */
+  .blueprint-crosshair {
+    position: relative;
+    width: 12px;
+    height: 12px;
+  }
+
+  .blueprint-crosshair::before,
+  .blueprint-crosshair::after {
+    content: '';
+    position: absolute;
+    background-color: currentColor;
+    opacity: 0.6;
+  }
+
+  .blueprint-crosshair::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+
+  .blueprint-crosshair::after {
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    transform: translateX(-50%);
   }
 }
