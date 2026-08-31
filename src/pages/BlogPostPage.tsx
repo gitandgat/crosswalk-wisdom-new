@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { posts, type Category } from "../data/posts";
+import { useDocumentMeta } from "../hooks/useDocumentMeta";
 
 const categoryColor: Record<Category, string> = {
   "Burnout & Identity": "bg-ink text-parchment",
@@ -18,6 +19,11 @@ const categoryColor: Record<Category, string> = {
 export default function BlogPostPage() {
   const { slug } = useParams();
   const post = posts.find((p) => p.slug === slug);
+
+  useDocumentMeta(
+    post ? `${post.title} | Crosswalk Wisdom` : "Crosswalk Wisdom",
+    post ? post.excerpt : "Crosswalk Wisdom helps burned-out healthcare professionals find the courage to choose themselves.",
+  );
 
   if (!post) return <Navigate to="/blog" replace />;
 

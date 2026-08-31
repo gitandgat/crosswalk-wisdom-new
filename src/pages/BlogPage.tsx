@@ -5,6 +5,7 @@ import { ArrowRight, Clock, Calendar } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { posts, type Category } from "../data/posts";
+import { useDocumentMeta } from "../hooks/useDocumentMeta";
 
 const categories: ("All" | Category)[] = [
   "All",
@@ -33,6 +34,11 @@ const fadeUp = (delay = 0) => ({
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState<"All" | Category>("All");
+
+  useDocumentMeta(
+    "Blog | Crosswalk Wisdom",
+    "Essays on burnout, identity, and the courage to choose yourself — for healthcare professionals rebuilding a life beyond the title.",
+  );
 
   const featured = posts.find((p) => p.featured);
   const filtered =
