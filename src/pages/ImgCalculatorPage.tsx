@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, Loader2, Calculator, CheckCircle2, AlertTriangle, TrendingDown } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useDocumentMeta } from "../hooks/useDocumentMeta";
 
 /* ─── types ─── */
 type ImmigrationStatus = "permanent_resident" | "work_permit" | "refugee" | "citizen" | "other";
@@ -199,6 +200,11 @@ function StatBox({
 
 /* ─── main component ─── */
 export default function ImgCalculatorPage() {
+  useDocumentMeta(
+    "MCCQE Reality Calculator | Crosswalk Wisdom",
+    "Free calculator for internationally trained physicians: see your real odds and timeline on the Canadian licensing path before you spend another year on it.",
+  );
+
   const [step, setStep] = useState(0);
   const [data, setData] = useState<FormData>(INITIAL);
   const [emailStatus, setEmailStatus] = useState<"idle" | "loading" | "done" | "error">("idle");

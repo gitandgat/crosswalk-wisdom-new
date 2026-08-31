@@ -2,8 +2,14 @@ import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 export default function ImgPivotChallengePage() {
+  useDocumentMeta(
+    '7-Day IMG Pivot Challenge | Crosswalk Wisdom',
+    'A free 7-day email course for internationally trained physicians deciding whether to keep chasing licensure or build a new path.',
+  );
+
   const [formData, setFormData] = useState({ firstName: '', email: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');

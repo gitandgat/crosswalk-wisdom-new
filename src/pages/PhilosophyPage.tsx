@@ -1,8 +1,14 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import { useDocumentMeta } from "../hooks/useDocumentMeta";
 
 export default function PhilosophyPage() {
+  useDocumentMeta(
+    "Philosophy | Crosswalk Wisdom",
+    "The beliefs behind Crosswalk Wisdom: burnout is an identity cage, not a wellness problem — and the way out is the courage to choose yourself.",
+  );
+
   return (
     <div id="top" className="min-h-screen bg-parchment text-charcoal">
       <Navbar />

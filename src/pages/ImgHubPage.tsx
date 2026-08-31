@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Loader2, Calculator, BookOpen, Brain, Map, Shield, Sparkles } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useDocumentMeta } from "../hooks/useDocumentMeta";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -127,6 +128,11 @@ const SUNK_COSTS = [
 ];
 
 export default function ImgHubPage() {
+  useDocumentMeta(
+    "IMG Pivot Hub | Crosswalk Wisdom",
+    "Free tools and resources for internationally trained physicians navigating the Canadian licensing path — starting with the MCCQE Reality Calculator.",
+  );
+
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");

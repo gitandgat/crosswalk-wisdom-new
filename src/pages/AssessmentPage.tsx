@@ -4,6 +4,7 @@ import AssessmentQuiz from '../components/assessment/AssessmentQuiz';
 import AssessmentResults from '../components/assessment/AssessmentResults';
 import { calculateStage } from '../data/assessmentData';
 import type { StageResult } from '../data/assessmentData';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 type Screen = 'landing' | 'quiz' | 'results';
 
@@ -28,20 +29,7 @@ export default function AssessmentPage() {
   const [result, setResult] = useState<StageResult | null>(null);
   const [score, setScore] = useState<number>(0);
 
-  // Update document title + meta description for this route
-  useEffect(() => {
-    const prevTitle = document.title;
-    const metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    const prevDescription = metaDesc?.content ?? '';
-
-    document.title = ASSESSMENT_TITLE;
-    if (metaDesc) metaDesc.content = ASSESSMENT_DESCRIPTION;
-
-    return () => {
-      document.title = prevTitle;
-      if (metaDesc) metaDesc.content = prevDescription;
-    };
-  }, []);
+  useDocumentMeta(ASSESSMENT_TITLE, ASSESSMENT_DESCRIPTION);
 
   // Restore in-progress session from localStorage
   useEffect(() => {

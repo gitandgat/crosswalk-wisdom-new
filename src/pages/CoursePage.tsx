@@ -3,6 +3,7 @@ import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useDocumentMeta } from "../hooks/useDocumentMeta";
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -144,6 +145,11 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 }
 
 export default function CoursePage() {
+  useDocumentMeta(
+    "The Course | Crosswalk Wisdom",
+    "A guided course for burned-out healthcare professionals ready to trade the title for a life they actually chose.",
+  );
+
   return (
     <div className="min-h-screen bg-parchment">
       <Navbar />

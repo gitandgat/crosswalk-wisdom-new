@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useDocumentMeta } from "../hooks/useDocumentMeta";
 
 const CROSSING_SESSION_URL = "https://sahawat.gumroad.com/l/crossing-session";
 
@@ -131,6 +132,11 @@ const products: Product[] = [
 ];
 
 export default function WorkWithMePage() {
+  useDocumentMeta(
+    "Work With Me | Crosswalk Wisdom",
+    "1:1 coaching and programs for burned-out healthcare professionals ready to build a life outside the title. See how we can work together.",
+  );
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

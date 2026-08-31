@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Play, ExternalLink, ArrowLeft, Dumbbell } from "lucide-react";
 import { program, exerciseLibrary } from "../data/glute-program";
+import { useDocumentMeta } from "../hooks/useDocumentMeta";
 
 /**
  * Glute Longevity — the 6-week posture-corrective program, viewable on-site.
@@ -66,6 +67,11 @@ function VideoDemo({ videoId, name }: { videoId: string | null; name: string }) 
 }
 
 export default function GluteProgramPage() {
+  useDocumentMeta(
+    "The Program | Glute Longevity",
+    "The full Glute Longevity training program — week-by-week strength and mobility work built for long-term movement health.",
+  );
+
   const [weekIdx, setWeekIdx] = useState(0);
   const [dayIdx, setDayIdx] = useState(0);
 

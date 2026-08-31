@@ -10,6 +10,7 @@ import {
   CalendarCheck,
   Stethoscope,
 } from "lucide-react";
+import { useDocumentMeta } from "../hooks/useDocumentMeta";
 
 /**
  * Glute Longevity — standalone branded sales/landing page.
@@ -170,6 +171,11 @@ function Wordmark() {
 }
 
 export default function GluteLandingPage() {
+  useDocumentMeta(
+    "Glute Longevity | Train for Life, Not Just Aesthetics",
+    "A strength and longevity training program built for people who want to move well, stay strong, and train for the long game — not just the mirror.",
+  );
+
   const reveal = useReveal();
   const [form, setForm] = useState({ firstName: "", email: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
